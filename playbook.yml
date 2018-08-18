@@ -3,13 +3,6 @@
   hosts: prod
   vars:
   tasks:
-  - name: verificando usuario logado
-    command: whoami
-
-  - name: verificando se o vim esta instalado
-    dnf: name=vim state=present
-    when: ansible_distribution == "Fedora"
-
   - name: garantindo que o ssh esta rodando
     service: name=httpd state=started
 
