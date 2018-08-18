@@ -4,11 +4,13 @@
   vars:
   tasks:
   - name: garantindo que o ssh esta rodando
-    service: name=httpd state=started
+    dnf: name=httpd state=present
+    when: ansible_distribution == "Fedora"
 
   - name: garantindo que o ssh esta rodando
-    service: name=mysql state=started
+    dnf: name=mysql state=present
+    when: ansible_distribution == "Fedora"
 
   - name: garantindo que o ssh esta rodando
-    service: name=php state=started
-
+    dnf: name=php state=present
+    when: ansible_distribution == "Fedora"
