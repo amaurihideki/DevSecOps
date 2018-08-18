@@ -1,12 +1,12 @@
 ---
-- name: Configurando um script
-  hosts: prod
+- name: LAMP
+  hosts: web
   tasks:
-  - name: garantindo que o ssh esta rodando
+  - name: garantindo que o apache esta rodando
     dnf: name=httpd state=present
 
-  - name: garantindo que o ssh esta rodando
+  - name: garantindo que o mysql esta rodando
     dnf: name=mysql state=present
 
-  - name: garantindo que o ssh esta rodando
+  - name: garantindo que o php esta rodando
     dnf: name=php state=present
